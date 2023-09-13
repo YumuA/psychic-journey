@@ -2,6 +2,7 @@ import sys
 from PyQt6.QtWidgets import (QApplication, QLabel,
 QWidget,QLineEdit, QPushButton,QMessageBox,QCheckBox)
 from PyQt6.QtGui import QFont, QPixmap
+import mysql.connector
 
 class Login(QWidget):
     
@@ -43,7 +44,36 @@ class Login(QWidget):
         self.check_view_password = QCheckBox(self)
         self.check_view_password.setText("Ver la contraseña")
         self.check_view_password.move (90,110)
+
+        login_button = QPushButton(self)
+        login_button.setText("Login")
+        login_button.setFont(QFont("Arial", 12))
+        login_button.resize(120,40)
+        login_button.move(115,160)
+        login_button.clicked.connect(self.iniciar_sesion)
+
+
+    def iniciar_sesion(self):
+        usuario = self.user_input.text()
+        contraseña = self.pass_input.text()
         
+        try:
+            conexion = mysql.connector.connect(
+            host = 'localhost',
+            user = 'root',
+            password ='',
+            database = 'test1'
+        )
+
+            if conexion.is_connected():
+                QMessageBox.information(self, "Exito", "Conectado Correctamente a MYSQL")
+                self.is_logged = True
+                conexion.close()
+            else:
+              QMessageBox.warning(self, "Error", "No se pudo conectar a MySQL")
+        except mysql.connector.Error as error:
+            QMessageBox.warning(self, "Error", f'Error MYSQL {error}')
+
 
 if __name__ == "__main__":
     
