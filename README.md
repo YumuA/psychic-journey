@@ -1,7 +1,5 @@
 ﻿# symmetrical-octo-giggle-
 
-![Logo de tu Aplicación](ruta/a/la/imagen/logo.png)
-
 ## Descripción
 
 La aplicación symmetrical-octo-giggle-  es una herramienta de inicio de sesión diseñada para simplificar el proceso de autenticación y acceso a una base de datos MySQL. Esta aplicación ha sido desarrollada utilizando PyQt6 para la interfaz de usuario y MySQL Connector para la conexión con la base de datos para la entrega de la materia modelamiento de base de datos del Ingeniero Elkin Arebalo.
