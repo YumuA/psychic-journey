@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import (QApplication, QLabel,
 QWidget,QLineEdit, QPushButton,QMessageBox,QCheckBox, QVBoxLayout)
 from PyQt6.QtGui import QFont, QPixmap 
 import mysql.connector
+from Register import Register_User_View
 
 
 class MainView(QWidget):
@@ -83,11 +84,12 @@ class Login(QWidget):
                 QLineEdit.EchoMode.Password
                 )
 
-    def iniciar(self):
+    def iniciar_MainView(self):
         pass
 
     def registrar_usr(self):
-        pass
+        self.new_user_form = Register_User_View()
+        self.new_user_form.show()
 
     def iniciar_sesion(self):
         usuario = self.user_input.text()
