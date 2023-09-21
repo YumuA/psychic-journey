@@ -67,7 +67,3 @@ Ver detalles de un músico, obra o instrumento, incluyendo las obras relacionada
 Capturas de Pantalla
 Captura de pantalla 1
 Captura de pantalla 2
-
-## Licencia
-Este proyecto está bajo la licencia [Nombre de la licencia]. Para más detalles, consulta el archivo LICENSE.
-
